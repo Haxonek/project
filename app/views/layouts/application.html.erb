@@ -8,7 +8,13 @@
 </head>
 <body>
 
+<% flash.each do |msg, key| %>
+  <%= content_tag(:div, msg, class: "alert alert-"+key) %>
+<% end %>
+
 <%= yield %>
+
+<%= link_to "Home", root_path %>
 
 </body>
 </html>

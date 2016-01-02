@@ -1,0 +1,14 @@
+<h1>Show All Books</h1>
+
+<table>
+  <% @books.each do |book| %>
+  <tr>
+    <td>Title: <%= link_to book.title, book %></td>
+    <td>Tags: <%= book.tags %></td>
+    <td>Description: <%= book.description %></td>
+    <td>Size: <%= book.chapters %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to "Create new Book", new_book_path %>

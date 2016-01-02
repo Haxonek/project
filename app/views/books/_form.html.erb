@@ -1,0 +1,13 @@
+<%= simple_form_for @book do |f| %>
+  <div class="field">
+    <%= f.input :title %>
+  </div>
+  <div class="field">
+    <%= f.input :description %>
+  </div>
+  <div class="field">
+    <%= f.input :tags %>
+  </div>
+
+  <%= f.button :submit %>
+<% end %>

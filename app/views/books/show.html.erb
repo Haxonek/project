@@ -1,0 +1,13 @@
+<h2><%= @book.title %></h2>
+
+<table>
+  <tr>
+    <td>Tags: <%= @book.tags %></td>
+    <td>Description: <%= @book.description %></td>
+    <td>Size: <%= @book.chapters %></td>
+    <td><%= link_to "Edit this Book", edit_book_path %></td>
+    <td><%= link_to "Delete this Book", book_path(@book), method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+</table>
+
+<p>Here we'll show a table of each chapter and it'll link to each</p>
