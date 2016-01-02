@@ -4,10 +4,28 @@
   <tr>
     <td>Tags: <%= @book.tags %></td>
     <td>Description: <%= @book.description %></td>
-    <td>Size: <%= @book.chapters %></td>
+    <td>Size: <%= @book.num_chapters %></td>
     <td><%= link_to "Edit this Book", edit_book_path %></td>
     <td><%= link_to "Delete this Book", book_path(@book), method: :delete, data: { confirm: "Are you sure?" } %></td>
   </tr>
 </table>
 
-<p>Here we'll show a table of each chapter and it'll link to each</p>
+<%= link_to "Add chapter", new_book_chapter_path(@book) %>
+
+<table>
+  <tr>
+    <td>title</td>
+    <td>description</td>
+    <td>body</td>
+    <td>tags</td>
+  </tr>
+<% @book.chapters.each do |chapter| %>
+  <tr>
+    <td><%= link_to chapter.title, book_chapter_path(@book, chapter) %></td>
+    <td><%= chapter.description %></td>
+    <td><%= chapter.body %></td>
+    <td><%= chapter.tags %></td>
+    <td><%= link_to "Delete", book_chapter_path(@book, chapter), method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+<% end %>
+</table>

@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :description
       t.text :tags
       t.integer :user_id
-      t.integer :chapters, default: 0
+      t.integer :num_chapters, default: 0
 
       t.timestamps null: false
     end
