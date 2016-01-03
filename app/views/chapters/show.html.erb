@@ -6,4 +6,15 @@
 
 <%= content_tag(:div, @chapter.body) %>
 
+<h4>Create a new Comment!</h4>
+<%= render 'comments/form' %>
+
+<% @comments.each do |comment| %>
+  <p><%= comment.body.to_s + " was created at " + comment.created_at.to_s + " with a score of " + comment.rating.to_s %>
+  <br/><%= link_to "like", like_comment_path(comment) %>
+  <%= link_to "dislike", dislike_comment_path(comment) %></p>
+<% end %>
+
+<br/>
+
 <%= link_to "Back", @book %>

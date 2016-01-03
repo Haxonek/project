@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :comments do
+    member do
+      get 'like', to: 'comments#like'
+      get 'dislike', to: 'comments#dislike'
+    end
+  end
+
   resources :books do
     resources :chapters
   end

@@ -1,0 +1,6 @@
+<!-- Might need a third input??  we'll see -->
+<%= simple_form_for @comment do |f| %>
+  <%= f.hidden_field :chapter_id, :value => @chapter.id %>
+  <%= f.input :body %>
+  <%= f.button :submit %>
+<% end %>

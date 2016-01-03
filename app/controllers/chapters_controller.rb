@@ -8,11 +8,13 @@ class ChaptersController < ApplicationController
 
   def show
     @book = Book.find(params[:book_id])
+    @comment = Comment.new
+    @comments = Comment.where(chapter_id: @chapter)
+    # @comment.chapter_id = @chapter.id
   end
 
   def new
     @book = Book.find(params[:book_id])
-    @chapter = Chapter.new
   end
 
   def create
