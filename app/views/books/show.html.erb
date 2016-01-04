@@ -5,6 +5,11 @@
     <td>Tags: <%= @book.tags %></td>
     <td>Description: <%= @book.description %></td>
     <td>Size: <%= @book.num_chapters %></td>
+    <% if @book.complete %>
+      <td>This book has been completed</td>
+    <% else %>
+      <td>This story is incomplete</td>
+    <% end %>
     <td><%= link_to "Edit this Book", edit_book_path %></td>
     <td><%= link_to "Delete this Book", book_path(@book), method: :delete, data: { confirm: "Are you sure?" } %></td>
   </tr>
