@@ -1,5 +1,10 @@
 <h1>Show All Books</h1>
 
+<%= form_tag books_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <table>
   <% @books.each do |book| %>
   <tr>
