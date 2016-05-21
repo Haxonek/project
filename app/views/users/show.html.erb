@@ -1,0 +1,15 @@
+<%= content_tag(:h2, @user.username + "\'s profile") %>
+<%= link_to "edit profile", edit_user_path %>
+
+<%= content_tag(:div, @user.description) %>
+
+<table>
+<% @books.each do |book| %>
+  <tr>
+  <%= content_tag(:h4, book.title) %>
+  <%= content_tag(:span, "Is it complete? "+book.complete) %>
+  <%= content_tag(:h4, "There are " + book.num_chapters + " chapters") %>
+  <%= content_tag(:div, book.body) %>
+  </tr>
+<% end %>
+</table>

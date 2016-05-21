@@ -12,6 +12,9 @@
   <%= content_tag(:div, msg, class: "alert alert-"+key) %>
 <% end %>
 
+<%= link_to "Sign up", new_user_path %>
+<%= link_to "Sign in", new_user_session_path %>
+
 <%= yield %>
 
 <%= link_to "Home", root_path %>

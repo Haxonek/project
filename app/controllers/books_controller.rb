@@ -2,10 +2,11 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :destroy]
 
   def index
-    @books = Book.where("tags LIKE ?", '%'+params[:search]+'%').order(created_at: :desc) # contains(tags: params[:search]) # where(:tags =~ str) # .search(params[:search])
-
+    unless params[:search].nil?
+      @books = Book.where("tags LIKE ?", '%'+params[:search]+'%').order(created_at: :desc)
+    end
     if @books.nil?
-      @books = Book.all
+      @books = Book.all.order(created_at: :desc)
     end
   end
 

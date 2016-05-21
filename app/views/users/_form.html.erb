@@ -1,0 +1,13 @@
+<%= simple_form_for @user do |f| %>
+  <div class="field">
+    <%= f.input :username %>
+  </div>
+  <div class="field">
+    <%= f.input :password %>
+  </div>
+  <div class="field">
+    <%= f.input :password_confirmation %>
+  </div>
+
+  <%= f.button :submit %>
+<% end %>

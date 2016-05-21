@@ -1,0 +1,12 @@
+<h2>Edit a User</h2>
+
+<%= simple_form_for @user do |f| %>
+  <div class="field">
+    <%= f.input :description %>
+  </div>
+  <div class="field">
+    <%= f.input :author_name %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
