@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    # doesn't ensure passwords match :/
+
     if @user.save
       flash[:notify] = "The user was created successfully"
       redirect_to user_path(@user)
@@ -33,6 +35,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :description, :author_name, :books)
+    params.require(:user).permit(:username, :password, :password_hash, :password_digest, :description, :author_name, :books)
   end
 end
